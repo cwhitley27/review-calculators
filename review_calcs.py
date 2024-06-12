@@ -8,7 +8,7 @@ st.markdown("""
         color: #31333f;
     }
     .stButton>button {
-        background-color: #4CAF50;
+        background-color: #OF2866;
         color: white;
         border-radius: 10px;
         padding: 10px 20px;
@@ -60,19 +60,19 @@ def reviews_needed_to_lower_rating(current_rating, total_reviews, target_rating,
 # Streamlit application
 def main():
     st.title("🔢 Rating Calculator")
-    st.write("Use these calculators to understand how ratings will affect your overall rating and other related scenarios.")
+    st.write("Use the below calculators to better understand how your overall rating will be impacted by various scenarios.")
 
     # New Rating Calculator
     st.markdown("## 📈 New Rating Calculator")
-    st.write("Calculate the new average rating after receiving a new review. For example, if your current rating is 4.2 with 50 reviews and you receive a new 5-star review, this calculator will show your new average rating.")
+    st.write("Calculate what your new overall rating will be. For example, if your current rating is 4.2 with 50 reviews and you receive a new 5-star review, this calculator will show your new average rating.")
     
-    current_rating_new = st.number_input("Enter current rating for New Rating Calculator:", min_value=0.0, max_value=5.0, step=0.1, key="current_rating_new")
-    total_reviews_new = st.number_input("Enter total number of reviews for New Rating Calculator:", min_value=0, step=1, key="total_reviews_new")
-    new_review = st.number_input("Enter new review rating:", min_value=0.0, max_value=5.0, step=0.1, key="new_review")
+    current_rating_new = st.number_input("Enter your overall current rating:", min_value=0.0, max_value=5.0, step=0.1, key="current_rating_new")
+    total_reviews_new = st.number_input("Enter how many reviews total you have:", min_value=0, step=1, key="total_reviews_new")
+    new_review = st.number_input("Enter the new rating:", min_value=0, max_value=5, step=1, key="new_review")
     
     if st.button("Calculate New Rating", key="calc_new_rating"):
         new_rating = calculate_new_rating(current_rating_new, total_reviews_new, new_review)
-        st.write(f"### New average rating after receiving a {new_review}-star review: {new_rating:.2f}")
+        st.write(f"### Your new average rating after receiving the latest {new_review}-star review: {new_rating:.2f}")
 
     st.markdown("---")
 
@@ -80,26 +80,26 @@ def main():
     st.markdown("## 🎯 Reviews Needed to Reach Target Rating")
     st.write("Calculate the number of 5-star reviews needed to reach a target rating. For example, if your current rating is 4.2 with 50 reviews and you want to reach a 4.5 rating, this calculator will show the number of additional 5-star reviews needed.")
     
-    current_rating_target = st.number_input("Enter current rating for Target Rating Calculator:", min_value=0.0, max_value=5.0, step=0.1, key="current_rating_target")
-    total_reviews_target = st.number_input("Enter total number of reviews for Target Rating Calculator:", min_value=0, step=1, key="total_reviews_target")
-    target_rating = st.number_input("Enter target rating:", min_value=0.0, max_value=5.0, step=0.1, key="target_rating")
+    current_rating_target = st.number_input("Enter your overall current rating:", min_value=0.0, max_value=5.0, step=0.1, key="current_rating_target")
+    total_reviews_target = st.number_input("Enter how many reviews total you have:", min_value=0, step=1, key="total_reviews_target")
+    target_rating = st.number_input("Enter the rating you want to achieve:", min_value=0.0, max_value=5.0, step=0.1, key="target_rating")
     
     if st.button("Calculate Reviews Needed to Reach Target Rating", key="calc_target_rating"):
         reviews_needed = reviews_needed_to_reach_target(current_rating_target, total_reviews_target, target_rating)
         if reviews_needed == -1:
             st.write("### More than 1000 reviews needed, calculation aborted for safety.")
         else:
-            st.write(f"### Number of 5-star reviews needed to reach a {target_rating} rating: {reviews_needed}")
+            st.write(f"### You need {reviews_needed} 5-star reviews to reach a {target_rating} rating")
 
     st.markdown("---")
 
     # Reviews Needed to Lower Rating
-    st.markdown("## 📉 Reviews Needed to Lower Rating")
+    st.markdown("## 📉 How will my rating drop?")
     st.write("Calculate the number of low-star reviews needed to decrease your rating to a target rating. For example, if your current rating is 4.2 with 50 reviews and you want to decrease it to a 3.8 rating with 1-star reviews, this calculator will show the number of additional 1-star reviews needed.")
     
-    current_rating_lower = st.number_input("Enter current rating for Lower Rating Calculator:", min_value=0.0, max_value=5.0, step=0.1, key="current_rating_lower")
-    total_reviews_lower = st.number_input("Enter total number of reviews for Lower Rating Calculator:", min_value=0, step=1, key="total_reviews_lower")
-    target_rating_lower = st.number_input("Enter target rating for Lower Rating Calculator:", min_value=0.0, max_value=5.0, step=0.1, key="target_rating_lower")
+    current_rating_lower = st.number_input("Enter your overall current rating:", min_value=0.0, max_value=5.0, step=0.1, key="current_rating_lower")
+    total_reviews_lower = st.number_input("Enter how many reviews total you have:", min_value=0, step=1, key="total_reviews_lower")
+    target_rating_lower = st.number_input("Enter target rating:", min_value=0.0, max_value=5.0, step=0.1, key="target_rating_lower")
     low_review_rating = st.number_input("Enter low review rating (1-3 stars):", min_value=1.0, max_value=3.0, step=0.1, key="low_review_rating")
     
     if st.button("Calculate Reviews Needed to Lower Rating", key="calc_lower_rating"):
