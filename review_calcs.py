@@ -8,27 +8,27 @@ st.markdown("""
         color: #e0e0e0;
     }
     .stButton>button {
-        background-color: #1f77b4;
+        background-color: #0F2866;
         color: white;
         border-radius: 10px;
         padding: 10px 20px;
         margin-top: 20px;
     }
     .stButton>button:hover {
-        background-color: #00509e;
+        background-color: #0C1F4A;
         color: white;
     }
     .stNumberInput>div>input {
         background-color: #333333;
         color: #e0e0e0;
         border-radius: 5px;
-        border: 2px solid #1f77b4;
+        border: 2px solid #0F2866;
     }
     .stSelectbox>div>div {
         background-color: #333333;
         color: #e0e0e0;
         border-radius: 5px;
-        border: 2px solid #1f77b4;
+        border: 2px solid #0F2866;
     }
     .stMarkdown {
         font-size: 16px;
@@ -39,7 +39,6 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
-
 
 def calculate_new_rating(current_rating, total_reviews, new_review):
     total_rating = current_rating * total_reviews
