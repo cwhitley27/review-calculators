@@ -1,18 +1,5 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
-pip install streamlit
-
-
-# In[2]:
-
-
 import streamlit as st
 
-# Custom CSS to enhance aesthetics
 st.markdown("""
     <style>
     .main {
@@ -35,7 +22,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Function definitions
 def calculate_new_rating(current_rating, total_reviews, new_review):
     total_rating = current_rating * total_reviews
     total_rating += new_review
@@ -61,7 +47,6 @@ def reviews_needed_to_lower_rating(current_rating, total_reviews, target_rating,
             return -1
     return additional_reviews
 
-# Streamlit application
 def main():
     st.title("🔢 Rating Calculator")
     st.write("### Choose a calculation type:")
@@ -102,8 +87,6 @@ def main():
 if __name__ == "__main__":
     main()
 
-
-# In[ ]:
 
 
 
