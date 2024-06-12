@@ -8,8 +8,8 @@ st.markdown("""
         color: #31333f;
     }
     .stButton>button {
-        background-color: #OF2866;
-        color: white;
+        background-color: #4CAF50;
+        color: #OF2866;
         border-radius: 10px;
         padding: 10px 20px;
         margin-top: 20px;
