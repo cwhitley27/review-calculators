@@ -4,8 +4,8 @@ import streamlit as st
 st.markdown("""
     <style>
     .main {
-        background-color: #121212;
-        color: #e0e0e0;
+        background-color: #f0f2f6;
+        color: #31333f;
     }
     .stButton>button {
         background-color: #0F2866;
@@ -19,26 +19,24 @@ st.markdown("""
         color: white;
     }
     .stNumberInput>div>input {
-        background-color: #333333;
-        color: #e0e0e0;
         border-radius: 5px;
         border: 2px solid #0F2866;
     }
     .stSelectbox>div>div {
-        background-color: #333333;
-        color: #e0e0e0;
         border-radius: 5px;
         border: 2px solid #0F2866;
     }
     .stMarkdown {
         font-size: 16px;
-        color: #e0e0e0;
+        color: #31333f;
     }
     .section {
         margin-bottom: 40px;
     }
     </style>
 """, unsafe_allow_html=True)
+
+
 
 def calculate_new_rating(current_rating, total_reviews, new_review):
     total_rating = current_rating * total_reviews
