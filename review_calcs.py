@@ -22,17 +22,20 @@ st.markdown("""
         background-color: #ffffff;
         color: #31333f;
         border-radius: 5px;
-        border: 2px solid #0F2866;
+        border: 2px solid #000000;
     }
     .stSelectbox>div>div {
         background-color: #ffffff;
         color: #31333f;
         border-radius: 5px;
-        border: 2px solid #0F2866;
+        border: 2px solid #000000;
     }
     .stMarkdown {
         font-size: 16px;
         color: #31333f;
+    }
+    .stMarkdown strong {
+        font-weight: bold;
     }
     .section {
         margin-bottom: 40px;
