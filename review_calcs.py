@@ -19,10 +19,14 @@ st.markdown("""
         color: white;
     }
     .stNumberInput>div>input {
+        background-color: #ffffff;
+        color: #31333f;
         border-radius: 5px;
         border: 2px solid #0F2866;
     }
     .stSelectbox>div>div {
+        background-color: #ffffff;
+        color: #31333f;
         border-radius: 5px;
         border: 2px solid #0F2866;
     }
