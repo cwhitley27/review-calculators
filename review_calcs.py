@@ -7,6 +7,14 @@ st.markdown("""
         background-color: #f0f2f6;
         color: #31333f;
     }
+    /* Set the input field styles */
+    input[type="number"] {
+        background-color: #ffffff;
+        color: #31333f;
+        border-radius: 5px;
+        border: 2px solid #000000;
+        width: 200px !important;  /* Force the width of the input field */
+    }
     .stButton>button {
         background-color: #0F2866;
         color: white;
@@ -17,20 +25,6 @@ st.markdown("""
     .stButton>button:hover {
         background-color: #0C1F4A;
         color: white;
-    }
-    .stNumberInput>div>input {
-        background-color: #ffffff;
-        color: #31333f;
-        border-radius: 5px;
-        border: 2px solid #000000;
-        width: 200px; /* Set input field width */
-    }
-    .stSelectbox>div>div {
-        background-color: #ffffff;
-        color: #31333f;
-        border-radius: 5px;
-        border: 2px solid #000000;
-        width: 200px; /* Set input field width */
     }
     .stMarkdown {
         font-size: 16px;
