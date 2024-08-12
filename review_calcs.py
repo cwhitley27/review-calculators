@@ -135,4 +135,5 @@ def main():
         else:
             st.markdown("<div class='error'>Please fill out all fields.</div>", unsafe_allow_html=True)
 
-if __name__ == "__main
+if __name__ == "__main__":
+    main()
