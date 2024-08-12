@@ -7,13 +7,26 @@ st.markdown("""
         background-color: #f0f2f6;
         color: #31333f;
     }
-    /* Set the input field styles */
-    input[type="number"] {
+    /* Style the input fields and the container */
+    .stNumberInput > div {
+        display: inline-block;
         background-color: #ffffff;
         color: #31333f;
         border-radius: 5px;
         border: 2px solid #000000;
-        width: 200px !important;  /* Force the width of the input field */
+        width: 200px !important;  /* Reduce width of input container */
+    }
+    .stNumberInput > div input {
+        background-color: #ffffff;
+        color: #31333f;
+        border-radius: 5px;
+        border: none;  /* Remove border from input field */
+        width: 140px !important;  /* Adjust width of the input field */
+    }
+    /* Adjust plus and minus button size */
+    .stNumberInput > div button {
+        background-color: #ffffff;
+        border: none;
     }
     .stButton>button {
         background-color: #0F2866;
