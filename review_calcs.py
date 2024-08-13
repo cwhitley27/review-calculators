@@ -109,7 +109,7 @@ def reviews_needed_to_lower_rating(current_rating, total_reviews, target_rating,
         current_rating = ((current_rating * (total_reviews - 1)) + low_review_rating) / total_reviews
         if additional_reviews > 1000:  # Safety check
             return -1
-    return additional reviews
+    return additional_reviews
 
 # Streamlit application
 def main():
