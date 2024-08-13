@@ -19,11 +19,13 @@ st.markdown("""
     /* Styling for Inputs */
     .stNumberInput > div {
         display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: #ffffff;
         color: #31333f;
         border-radius: 5px;
         border: 2px solid #000000;
-        padding: 8px;
+        padding: 5px;
         width: 250px !important;  /* Set width of input container */
     }
     .stNumberInput > div input {
@@ -31,8 +33,9 @@ st.markdown("""
         color: #31333f;
         border-radius: 5px;
         border: none;  /* Remove border from input field */
-        width: 150px !important;  /* Adjust width of the input field */
+        width: 100px !important;  /* Adjust width of the input field */
         padding-left: 10px;
+        font-size: 14px;
     }
 
     /* Adjust plus and minus button size */
@@ -41,14 +44,9 @@ st.markdown("""
         border: none;
         font-weight: bold;
         color: #0F2866;
-        font-size: 20px;
+        font-size: 16px;
     }
     
-    /* Remove extra elements and grey strip */
-    .stNumberInput > div > div {
-        display: none;
-    }
-
     /* Styling for Buttons */
     .stButton>button {
         background-color: #0F2866;
@@ -84,33 +82,6 @@ st.markdown("""
         font-size: 14px;
         font-weight: bold;
     }
-
-    /* Tooltip styling for better user guidance */
-    .tooltip {
-        position: relative;
-        display: inline-block;
-        cursor: pointer;
-    }
-    .tooltip .tooltiptext {
-        visibility: hidden;
-        width: 160px;
-        background-color: #0F2866;
-        color: #fff;
-        text-align: center;
-        border-radius: 5px;
-        padding: 5px;
-        position: absolute;
-        z-index: 1;
-        bottom: 100%;
-        left: 50%;
-        margin-left: -80px;
-        opacity: 0;
-        transition: opacity 0.3s;
-    }
-    .tooltip:hover .tooltiptext {
-        visibility: visible;
-        opacity: 1;
-    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -135,10 +106,10 @@ def reviews_needed_to_lower_rating(current_rating, total_reviews, target_rating,
     while current_rating > target_rating:
         total_reviews += 1
         additional_reviews += 1
-        current_rating = ((current_rating * (total_reviews - 1)) + low_review_rating) / total_reviews
+        current_rating = ((current_rating * (total_reviews - 1)) + low_review_rating) / total reviews
         if additional_reviews > 1000:  # Safety check
             return -1
-    return additional_reviews
+    return additional reviews
 
 # Streamlit application
 def main():
