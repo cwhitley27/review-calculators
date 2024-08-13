@@ -151,8 +151,6 @@ def main():
         else:
             st.markdown("<div class='error'>Please fill out all fields.</div>", unsafe_allow_html=True)
 
-    st.markdown("---")
-
     # Reviews Needed to Lower Rating
     st.markdown("## 📉 How will my rating drop?")
     st.write("**Calculate the number of low-star reviews needed to decrease your rating to a target rating. For example, if your current rating is 4.2 with 50 reviews and you want to decrease it to a 3.8 rating with 1-star reviews, this calculator will show the number of additional 1-star reviews needed.**")
@@ -174,3 +172,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
