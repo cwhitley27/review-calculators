@@ -1,47 +1,71 @@
 import streamlit as st
 
-# Custom CSS to enhance aesthetics
+# Injecting Custom CSS for Enhanced UI/UX
 st.markdown("""
     <style>
+    /* Main background and text color */
     .main {
-        background-color: #f0f2f6;
+        background-color: #f7f9fc;
         color: #31333f;
+        font-family: 'Arial', sans-serif;
     }
-    /* Style the input fields and the container */
+    
+    /* Title and Heading Styling */
+    h1, h2, h3, h4 {
+        font-weight: bold;
+        color: #0F2866;
+    }
+
+    /* Styling for Inputs */
     .stNumberInput > div {
-        display: inline-block;
+        display: flex;
+        justify-content: space-between;
         background-color: #ffffff;
         color: #31333f;
         border-radius: 5px;
         border: 2px solid #000000;
-        width: 200px !important;  /* Reduce width of input container */
+        padding: 8px;
+        width: 250px !important;  /* Set width of input container */
     }
     .stNumberInput > div input {
         background-color: #ffffff;
         color: #31333f;
         border-radius: 5px;
         border: none;  /* Remove border from input field */
-        width: 140px !important;  /* Adjust width of the input field */
+        width: 150px !important;  /* Adjust width of the input field */
+        padding-left: 10px;
     }
+
     /* Adjust plus and minus button size */
     .stNumberInput > div button {
         background-color: #ffffff;
         border: none;
+        font-weight: bold;
+        color: #0F2866;
+        font-size: 20px;
     }
+    
+    /* Styling for Buttons */
     .stButton>button {
         background-color: #0F2866;
         color: white;
-        border-radius: 10px;
+        border-radius: 8px;
         padding: 10px 20px;
         margin-top: 20px;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
     }
     .stButton>button:hover {
         background-color: #0C1F4A;
         color: white;
     }
+
+    /* Adjust margin and padding for section spacing */
     .stMarkdown {
         font-size: 16px;
         color: #31333f;
+        margin-bottom: 20px;
     }
     .stMarkdown strong {
         font-weight: bold;
@@ -49,13 +73,44 @@ st.markdown("""
     .section {
         margin-bottom: 40px;
     }
+    
+    /* Error message styling */
     .error {
         color: red;
         font-size: 14px;
+        font-weight: bold;
+    }
+
+    /* Tooltip styling for better user guidance */
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 160px;
+        background-color: #0F2866;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px;
+        position: absolute;
+        z-index: 1;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -80px;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
     }
     </style>
 """, unsafe_allow_html=True)
 
+# Function definitions for calculations
 def calculate_new_rating(current_rating, total_reviews, new_review):
     total_rating = current_rating * total_reviews
     total_rating += new_review
@@ -144,3 +199,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
