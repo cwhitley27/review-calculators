@@ -19,7 +19,6 @@ st.markdown("""
     /* Styling for Inputs */
     .stNumberInput > div {
         display: flex;
-        justify-content: space-between;
         background-color: #ffffff;
         color: #31333f;
         border-radius: 5px;
@@ -45,6 +44,11 @@ st.markdown("""
         font-size: 20px;
     }
     
+    /* Remove extra elements and grey strip */
+    .stNumberInput > div > div {
+        display: none;
+    }
+
     /* Styling for Buttons */
     .stButton>button {
         background-color: #0F2866;
@@ -199,4 +203,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
